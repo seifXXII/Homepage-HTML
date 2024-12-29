@@ -15,10 +15,11 @@ header {
     align-items: center;
     position: sticky;
     top: 0px;
+    flex-wrap: wrap;
+    padding:10px 7% ;
 }
 
 header h1 {
-    margin-left: 7%;
     font-family: "Sofia", sans-serif;
 }
 
@@ -27,7 +28,6 @@ header ul {
     padding: 0;
     display: flex;
     gap: 15px;
-    margin-right: 7%;
 }
 
 header ul li {
@@ -62,7 +62,7 @@ section.main li h2 {
 }
 section.main li h2 a{
     text-decoration: none;
-    color: #333;
+    color: #7a7979;
 }
 
 
@@ -82,23 +82,29 @@ section.blog-posts div {
 }
 .content{
     display: flex;
-align-items: flex-start;
-max-width: 800px;
+    align-items: flex-start;
+    max-width: 800px;
+    background-image: url(img/paper.jpg);
 }
-
 
 section.blog-posts div h1 {
     font-size: 2rem;
-    color: #333;
+    color: #5c5c5c;
     text-align: center;
     margin: 0 0 15px;
     font-size: 24px;
 }
+.content span ul li{
+    line-height: 1.6;
+    font-size: 1.2rem;
+    color: #001950;
 
+}
 section.blog-posts div p {
     line-height: 1.6;
-    font-size: 20px;
+    font-size: 1.2rem;
     text-align: center;
+    color: #001950;
 }
 
 section.blog-posts img {
@@ -177,4 +183,58 @@ table th {
     flex-wrap: wrap;
     align-items: center;
 }
+}
+
+@media screen and (max-width: 768px) {
+    /* Stack layout vertically */
+    section.main {
+        flex-direction: column;
+    }
+
+    section.blog-posts {
+        flex-direction: column;
+    }
+
+    section.blog-posts div {
+        flex: 1 1 100%; /* Make each blog post section take full width */
+    }
+
+    /* Adjust font sizes and padding */
+    body {
+        margin: 0 5%;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header ul li {
+        margin: 5px 0;
+    }
+
+    section.main li h2 {
+        font-size: 1.25rem;
+    }
+
+    section.main li p,
+    section.blog-posts div p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="submit"] {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
 }
